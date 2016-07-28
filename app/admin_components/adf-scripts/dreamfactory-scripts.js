@@ -83,6 +83,8 @@ angular.module('dfScripts', ['ngRoute', 'dfUtility'])
             $scope.$parent.title = 'Scripts';
             $scope.sampleSelect = null;
 
+            dfApplicationData.loadApi(['event', 'script_type']);
+
             // Loosely defined script object for when a script is non-existent.
             var ScriptObj = function (scriptId, scriptLanguage, scriptData) {
 

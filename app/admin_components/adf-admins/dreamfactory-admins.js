@@ -84,6 +84,8 @@ angular.module('dfAdmins', ['ngRoute', 'dfUtility', 'dfApplication', 'dfHelp'])
 
             $scope.$parent.title = 'Admins';
 
+            dfApplicationData.loadApi(['admin']);
+
             // Set module links
             $scope.links = [
                 {
@@ -1291,6 +1293,3 @@ angular.module('dfAdmins', ['ngRoute', 'dfUtility', 'dfApplication', 'dfHelp'])
 					   }
 				   }
 			   }])
-
-
-

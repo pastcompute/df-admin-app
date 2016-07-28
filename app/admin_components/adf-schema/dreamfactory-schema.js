@@ -117,6 +117,8 @@ angular.module('dfSchema', ['ngRoute', 'dfUtility'])
         // Set Title in parent
         $scope.$parent.title = 'Schema';
 
+        dfApplicationData.loadApi(['service']);
+
         // Set module links
         $scope.links = [
             {
@@ -135,7 +137,7 @@ angular.module('dfSchema', ['ngRoute', 'dfUtility'])
         var tempObj = {};
 
         angular.forEach(dfApplicationData.getApiData('service', {type: 'mysql,pgsql,sqlite,sqlsrv,sqlanywhere,oracle,ibmdb2,mongodb'}), function (serviceData) {
-            
+
             tempObj[serviceData.name] = new Service(serviceData);
         });
 
@@ -1843,4 +1845,3 @@ angular.module('dfSchema', ['ngRoute', 'dfUtility'])
             }
         };
     });
-
