@@ -639,7 +639,7 @@ angular.module('dfApplication', ['dfUtility', 'dfUserManagement', 'ngResource'])
 
             _asyncInit(newApis).then(
                 function () {
-
+                    return;
                 }
             );
         }

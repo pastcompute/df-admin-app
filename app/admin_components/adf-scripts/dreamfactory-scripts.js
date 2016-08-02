@@ -190,7 +190,16 @@ angular.module('dfScripts', ['ngRoute', 'dfUtility'])
                 $scope.highlightScript();
             }
 
-            $scope.scriptTypes = dfApplicationData.getApiData('script_type');
+            if(dfApplicationData.getApiData('script_type') === undefined) {
+                // These values are used to build the script type dropdown
+                dfApplicationData.getApiData('script_type', null, true).then(function (result) {
+                  $scope.scriptTypes = dfApplicationData.getApiData('script_type');
+                });
+            }
+            else {
+                $scope.scriptTypes = dfApplicationData.getApiData('script_type');
+            }
+
             $scope.uppercaseVerbLabels = true;
             $scope.allowedVerbs = ['get', 'post', 'put', 'patch', 'delete']
 
@@ -264,7 +273,6 @@ angular.module('dfScripts', ['ngRoute', 'dfUtility'])
 
             // Retrieves associated path(s) data for an event
             $scope._getEventFromServer = function (requestDataObj) {
-
 
                 return $http({
                     method: 'GET',
@@ -504,6 +512,7 @@ angular.module('dfScripts', ['ngRoute', 'dfUtility'])
                     function (result) {
 
                         $scope.currentScriptObj = $scope.__getDataFromHttpResponse(result);
+                        $scope.editor.session.setValue($scope.currentScriptObj.content);
                         $scope.menuPathArr.push(scriptIdStr);
                     },
 
