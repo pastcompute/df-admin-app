@@ -951,7 +951,7 @@ angular.module('dfAdmins', ['ngRoute', 'dfUtility', 'dfApplication', 'dfHelp'])
                             var arr = [ "first_name", "last_name", "name", "email" ];
 
                             filters = arr.map(function(item) {
-                                return item + ' like "%' + filterText + '%"'
+                                return '(' + item + ' like "%' + filterText + '%")'
                             }).join(' or ');
 
                         }
