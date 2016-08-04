@@ -1725,7 +1725,7 @@ angular.module('dfUtility', ['dfApplication'])
                     var arr = [ "first_name", "last_name", "name", "email" ];
 
                     return arr.map(function(item) {
-                        return item + ' like "%' + filterText + '%"'
+                        return '(' + item + ' like "%' + filterText + '%")'
                     }).join(' or ');
 
                 }
