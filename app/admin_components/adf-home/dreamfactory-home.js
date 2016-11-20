@@ -104,25 +104,25 @@ angular.module('dfHome', ['ngRoute', 'dfUtility', 'dfApplication', 'dfHelp'])
                 {
                     name: 'welcome-home',
                     label: 'Welcome',
-                    href: "//www.dreamfactory.com/in_product_v2/welcome.html?" + statsQueryParams,
+                    href: "//www.example.com/in_product_v2/welcome.html?" + statsQueryParams,
                     attributes: []
                 },
                 {
                     name: 'quickstart-home',
                     label: 'Quickstart',
-                    href: "//www.dreamfactory.com/in_product_v2/quickstart.html",
+                    href: "//www.example.com/in_product_v2/quickstart.html",
                     attributes: []
                 },
                 {
                     name: 'resource-home',
                     label: 'Resources',
-                    href: "//www.dreamfactory.com/in_product_v2/resources.html",
+                    href: "//www.example.com/in_product_v2/resources.html",
                     attributes: []
                 },
                 {
                     name: 'download-home',
                     label: 'Download',
-                    href: "//www.dreamfactory.com/in_product_v2/downloads.html",
+                    href: "//www.example.com/in_product_v2/downloads.html",
                     attributes: []
                 }
             ];
